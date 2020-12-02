@@ -24,7 +24,11 @@ const parentList = [
 ]
 
 function renderParentList(list){
-  console.log(list);
+  list.forEach(({name, children}) =>{
+    const itemParent = document.createElement('li');
+    itemParent.textContent = `${name}' é pai de ${children}`;
+    $parentList.appendChild(itemParent);
+  });
 }
 
 renderParentList(parentList)
